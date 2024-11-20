@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/logoAux.png">
+
+</head>
+<body>
+    <nav class="nav__addRentti">
+        <a href="index.html">
+            <span class="material-symbols-outlined">reply</span>
+            <p>Volver al inicio</p>
+        </a>
+        <div class="nav__addRentti-title">
+            <h2>Información de la propiedad</h2>
+        </div>
+    </nav>
+
+    <main>
+        <div class="property-container">
+            <div class="header">
+                <h2>Alminar Mauritania</h2>
+                <p class="address">Cl. 108 # 2 sur-05</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="main-image">
+                    <img src="https://cdn.prod.website-files.com/5f4f67c5950db17954dd4f52/5f5b7ee442f1e5b9fee1c117_hacerse-una-casa.webp" alt="Edificio Alminar Mauritania">
+                    <div class="price-tag">
+                        <span class="price">$630.000</span>
+                        <span class="type">Casa</span>
+                    </div>
+                </div>
+                
+                <div class="description">
+                    <h3>Descripción</h3>
+                    <p>Ubicado en un tranquilo y un poco alejado rincón de Ibagué, Alminar Mauritania es un conjunto residencial nuevo que destaca como la joya del sector. Con un diseño moderno y áreas comunes impecables, es el lugar perfecto para quienes buscan paz y confort sin renunciar a la belleza y la funcionalidad. Su arquitectura contemporánea y sus zonas verdes ofrecen un ambiente acogedor y relajante, ideal para familias o personas que deseen estar alejadas del bullicio del centro pero con todas las comodidades a su disposición.</p>
+                </div>
+                <div class="location">
+                    <h3>Ubicación</h3>
+                    <div class="map">
+                        <img src="https://i.blogs.es/ef32be/google-maps-portada/500_333.webp" alt="Mapa de ubicación">
+                    </div>
+                </div>
+                <div class="features">
+                    <h3>Características especiales</h3>
+                    <ul>
+                        <li>
+                            <span class="material-symbols-outlined">pets</span>
+                            <p>Se permiten mascotas</p>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">receipt_long</span>
+                            <p>Servicios incluidos</p>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined">chair</span>
+                            <p>Muebles incluidos</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <h3>¿Necesitas más información?</h3>
+                    <textarea placeholder="Escribe tu consulta aquí..."></textarea>
+                    <button class="submit-btn">Enviar consulta</button>
+                </div>
+        
+                <div class="calendar">
+                    <h3>Agenda una cita</h3>
+                    <input type="date">
+                    <button class="calendar-btn">Agendar</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__logo">
+                <img src="assets/logo.svg" alt="logo Rentti">
+            </div>
+            <div class="footer__info">
+                <ul class="footer__ul">
+                    <li class="footer__ul__item"><b>Acerca</b></li>
+                    <li class="footer__ul__item"><a href="about.html">Acerca de nosotros</a></li>
+                </ul>
+            </div>
+            <div class="container-accessibility">
+                <button class="accessibility button-accessibility">
+                    <span class="material-symbols-outlined">accessible_forward</span>
+                </button>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <div class="footer__social-item"><img src="assets/twitter.svg" alt="twitter"></div>
+                <div class="footer__social-item"><img src="assets/instagram.svg" alt="instagram"></div>
+                <div class="footer__social-item"><img src="assets/facebook.svg" alt="facebook"></div>
+            </div>
+            <div class="copy">
+                <pre>© 2024 Rentti, Inc.  ·  Privacidad  ·  Términos </pre>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "Wl48kDicAww2o2wA5",
+            });
+        })();
+    </script>
+    
+    <script src="propertyView.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>

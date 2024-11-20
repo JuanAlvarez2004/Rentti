@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/logoAux.png">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__logo">
+            <a href="index.html"><h2>RENTTI</h2></a>
+        </div>
+        <div class="nav__menu">
+            <a href="AddRentti.html" class="button__propiedad">
+                Pon tu propiedad en Rentti
+                <span class="material-symbols-outlined">gite</span>
+            </a>
+            <div class="button__user">
+                <input type="checkbox" id="toggle-menu">
+                <label for="toggle-menu">
+                    <span class='material-symbols-outlined'>menu</span>
+                    <span class='material-symbols-outlined'>account_circle</span>
+                </label>
+                <div class="open-menu">
+                    <ul class="menu">
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </nav>
+
+    <main>
+        <div class="about-container">
+            <div class="about-company">
+                <div class="about-text">
+                    <h1>Sobre nuestra empresa</h1>
+                    <p>En Rentti, nos apasiona simplificar la vida de las personas, especialmente la de los estudiantes que enfrentan el desafío de buscar vivienda en una ciudad nueva. Somos una plataforma diseñada para conectar a arrendadores y arrendatarios de manera eficiente, ofreciendo una experiencia intuitiva, segura y confiable. Con Rentti, encontrar el lugar perfecto para vivir es tan fácil como hacer clic.</p>
+                </div>
+                <div class="about__img-container">
+                    <img src="https://cdn.pixabay.com/photo/2021/02/18/12/03/people-6027028_1280.jpg" alt="Estudiantes">
+                </div>
+            </div>
+            <div class="mission">
+                <div class="mission__img-container">
+                    <img src="https://cdn.pixabay.com/photo/2019/09/30/16/00/house-4516176_640.jpg" alt="Vivienda">
+                </div>
+                <div class="about-text">
+                    <h2>Nuestra misión</h2>
+                    <p>Nuestra misión es transformar la manera en que las personas encuentran y gestionan propiedades de arrendamiento. Buscamos ser una solución práctica y accesible que ahorre tiempo y esfuerzo, brindando herramientas innovadoras que faciliten la toma de decisiones y fomenten la confianza entre todas las partes involucradas.</p>
+                </div>
+            </div>
+            <div class="story">
+                <div class="about-text">
+                    <h2>Nuestra historia</h2>
+                    <p>Rentti nació del entusiasmo de cuatro estudiantes de Ingeniería de Sistemas de la Universidad de Ibagué, unidos por el deseo de resolver problemas cotidianos a través de la tecnología. Inspirados por nuestra propia experiencia buscando alojamiento, decidimos crear una plataforma que no solo resolviera estas dificultades, sino que también nos permitiera aprender y crecer como profesionales en el camino. Rentti es el resultado de nuestra visión, esfuerzo y pasión por ofrecer soluciones digitales de impacto.</p>
+                </div>
+                <div class="story__img-container">
+                    <img src="https://www.unibague.edu.co/images/Unibague/Noticias/2021/11-noviembre/Portal-Unibague.JPG" alt="Universidad de Ibagué">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__logo">
+                <img src="assets/logo.svg" alt="logo Rentti">
+            </div>
+            <div class="footer__info">
+                <ul class="footer__ul">
+                    <li class="footer__ul__item"><b>Acerca</b></li>
+                    <li class="footer__ul__item"><a href="#">Acerca de nosotros</a></li>
+                </ul>
+            </div>
+            <div class="container-accessibility">
+                <button class="accessibility button-accessibility">
+                    <span class="material-symbols-outlined">accessible_forward</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <div class="footer__social-item"><img src="assets/twitter.svg" alt="twitter"></div>
+                <div class="footer__social-item"><img src="assets/instagram.svg" alt="instagram"></div>
+                <div class="footer__social-item"><img src="assets/facebook.svg" alt="facebook"></div>
+            </div>
+            <div class="copy">
+                <pre>© 2024 Rentti, Inc.  ·  Privacidad  ·  Términos </pre>
+            </div>
+        </div>
+    </footer>
+
+    <script src="accessibility.js"></script>
+</body>
+</html>

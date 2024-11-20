@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/logoAux.png">
+
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__logo">
+            <a href="index.html"><h2>RENTTI</h2></a>
+        </div>
+        <div class="nav__menu">
+            <a href="AddRentti.html" class="button__propiedad">
+                Pon tu propiedad en Rentti
+                <span class="material-symbols-outlined">gite</span>
+            </a>
+            <div class="button__user">
+                <input type="checkbox" id="toggle-menu">
+                <label for="toggle-menu">
+                    <span class='material-symbols-outlined'>menu</span>
+                    <span class='material-symbols-outlined'>account_circle</span>
+                </label>
+                <div class="open-menu">
+                    <ul class="menu">
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </nav>
+
+    <section class="section__msg">
+        <h1>Encuentra el lugar perfecto para vivir tu mejor experiencia universitaria</h1>
+    </section>
+    
+    <section class="search__bar">
+        <div class="search__bar__bar">
+            <input type="text" id="inputLocation" placeholder="En Ibagué">
+            <div class="search__bar__bar-filtericon">
+                <input type="checkbox" id="filter__modal">
+                <label for="filter__modal">
+                    <span class="material-symbols-outlined">
+                        tune
+                    </span>
+                </label>
+                <dialog id="filterModal" class="modal-content">
+                    <div class="modal-content">
+                        <div class="header__filter">
+                            <button class="close-button" onclick="document.getElementById('filter__modal').checked = false;">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                            <h3>Filtros</h3>
+                        </div>
+                        <!-- Tipo de vivienda -->
+                        <div class="filter-section">
+                            <h4>Tipo de vivienda</h4>
+                            <div class="filter-options">
+                                <button class="filter-option" onclick="selectButton(this, '')">Cualquier tipo</button>
+                                <button class="filter-option" onclick="selectButton(this, 'Casa')">Casa</button>
+                                <button class="filter-option" onclick="selectButton(this, 'Apartamento')">Apartamento</button>
+                                <button class="filter-option" onclick="selectButton(this, 'Apartaestudio')">Apartaestudio</button>
+                            </div>
+                        </div>
+
+                        <!-- Rango de precios -->
+                        <div class="filter-section">
+                            <h4>Rango de precios</h4>
+                            <div class="price-range">
+                                <button class="quantity-button" onclick="adjustPrice(-50000)">-</button>
+                                <span id="priceValue">300000</span>
+                                <button class="quantity-button" onclick="adjustPrice(50000)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Habitaciones y baños -->
+                        <div class="filter-section">
+                            <h4>Habitaciones y baños</h4>
+                            <div class="room-options">
+                                <div class="room-option">
+                                    <label>Habitaciones</label>
+                                    <div>
+                                        <button class="quantity-button" onclick="adjustRooms(-1)">-</button>
+                                        <span id="roomCount">1</span>
+                                        <button class="quantity-button" onclick="adjustRooms(1)">+</button>
+                                    </div>
+                                </div>
+                                <div class="room-option">
+                                    <label>Baños</label>
+                                    <div>
+                                        <button class="quantity-button" onclick="adjustBathrooms(-1)">-</button>
+                                        <span id="bathroomCount">1</span>
+                                        <button class="quantity-button" onclick="adjustBathrooms(1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Condiciones -->
+                        <div class="filter-section">
+                            <h4>Condiciones</h4>
+                            <div class="conditions">
+                                <button class="condition-option" onclick="toggleFeature(this, 'petsAllowed')"> <span class="material-symbols-outlined">pets</span> Se permiten mascotas</button>
+                                <button class="condition-option" onclick="toggleFeature(this, 'servicesIncluded')"><span class="material-symbols-outlined">receipt_long</span> Servicios incluidos</button>
+                                <button class="condition-option" onclick="toggleFeature(this, 'furnitureIncluded')"><span class="material-symbols-outlined">chair</span> Muebles incluidos</button>
+                            </div>
+                        </div>
+                        <div class="apply-filters">
+                            <button class="apply-button" onclick="applyFilters()">
+                                <span class="material-symbols-outlined">filter_alt</span> Aplicar filtros
+                            </button>
+                        </div>
+
+                </dialog>
+            </div>
+            <button class="search__bar__bar-searchicon" onclick="filterLocation()">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <main>
+        <div class="grid">
+            <!-- <div class="grid__item-container">
+                <span class="material-symbols-outlined">favorite</span>
+                <a class="grid__item" href="viewHouse.html">
+                    <div class="grid__item__img">
+                        <img src="https://static.mujerhoy.com/www/multimedia/202402/27/media/cortadas/eladio-principal-kacB-U2101662330391yxD-1248x1248@MujerHoy.jpg" alt="Eladio">
+                    </div>
+                    <div class="grid__item__info">
+                        <div class="grid__item__info-description">
+                            <ul class="description-ul">
+                                <li class="description-li"><b>Eladio Carrion</b></li>
+                                <li class="description-li">Más información</li>
+                                <li class="description-li">1.000.000 $ / mes</li>
+                            </ul>
+                        </div>
+                        <div class="grid__item__info-rating">
+                            <span class="material-symbols-outlined">star</span>
+                            <p>5.0</p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__logo">
+                <img src="assets/logo.svg" alt="logo Rentti">
+            </div>
+            <div class="footer__info">
+                <ul class="footer__ul">
+                    <li class="footer__ul__item"><b>Acerca</b></li>
+                    <li class="footer__ul__item"><a href="about.html">Acerca de nosotros</a></li>
+                </ul>
+            </div>
+            <div class="container-accessibility">
+                <button class="accessibility button-accessibility">
+                    <span class="material-symbols-outlined">accessible_forward</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="footer__social">
+                <div class="footer__social-item"><img src="assets/twitter.svg" alt="twitter"></div>
+                <div class="footer__social-item"><img src="assets/instagram.svg" alt="instagram"></div>
+                <div class="footer__social-item"><img src="assets/facebook.svg" alt="facebook"></div>
+            </div>
+            <div class="copy">
+                <pre>© 2024 Rentti, Inc.  ·  Privacidad  ·  Términos </pre>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="ui.js"></script>
+    <script src="properties.js"></script>
+    <script src="favorite.js"></script>
+    <script src="filter.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>
