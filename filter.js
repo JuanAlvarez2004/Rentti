@@ -112,5 +112,20 @@ function applyFilters() {
 function filterLocation() {
     let cityProp = document.getElementById('inputLocation').value.trim();
     const filteredCity = properties.filter(property => property.city.toLowerCase() === cityProp.toLowerCase());
-    displayProperties(filteredCity);
+
+    // Si no hay propiedades, mostrar mensaje de error
+    if (filteredCity.length === 0) {
+        const grid = document.querySelector('.grid');
+        if (grid) {
+            grid.innerHTML = `
+                <div class="no-results">
+                    <p>No se han encontrado propiedades ubicadas en está ciudad.</p>
+                    <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+                </div>
+            `;
+        }
+    } else {
+        console.log("Propiedades después del filtrado:", filteredProperties); // Debug
+        displayProperties(filteredCity);
+    }   
 }
