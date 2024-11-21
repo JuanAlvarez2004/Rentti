@@ -86,9 +86,14 @@ function applyFilters() {
         return matchesType && matchesPrice && matchesRooms && matchesBathrooms && matchesPets && matchesServices && matchesFurniture;
     });
 
-    // const filteredProperties = properties.filter(property => property.price === 800000);
     console.log("Propiedades después del filtrado:", filteredProperties); // Debug
     displayProperties(filteredProperties);
+
+    // Cerrar el diálogo desmarcando el checkbox
+    const filterCheckbox = document.getElementById('filter__modal');
+    if (filterCheckbox) {
+        filterCheckbox.checked = false;
+    }
 }
 
 function filterLocation() {
