@@ -1,3 +1,19 @@
+// Inicializar el aplicativo con un usuario creado con anticipación
+if (!localStorage.getItem('users')) {
+    const userRoot = {
+        id: 1,
+        name: 'Root',
+        email: 'juandavidalvarezzapata10@gmail.com',
+        password: '123456',
+        favorites: [],
+        createdAt: 1
+    };
+    
+    // Crear el array inicial con el usuario root
+    localStorage.setItem('users', JSON.stringify([userRoot]));
+}
+
+
 // Estructura para manejar usuarios
 let users = JSON.parse(localStorage.getItem('users')) || [];
 

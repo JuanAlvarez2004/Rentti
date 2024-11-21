@@ -1,5 +1,19 @@
 // properties.js
 
+// Cargar propiedades iniciales sólo si no están en localStorage
+if (!localStorage.getItem('properties')) {
+    fetch("assets/objetos_extraidos.json")
+        .then(response => response.json())
+        .then(data => {
+            // Guardar las propiedades iniciales en localStorage
+            localStorage.setItem('properties', JSON.stringify(data));
+
+            // Mostrar propiedades en el índice
+            displayProperties(data);
+        })
+        .catch(error => console.error("Error cargando el archivo JSON:", error));
+} 
+
 // Estructura para manejar propiedades
 let properties = JSON.parse(localStorage.getItem('properties')) || [];
 

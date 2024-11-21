@@ -8,7 +8,6 @@ function updateUIForLoggedUser() {
     
     // Obtener elementos del menú
     const menuItems = document.querySelector('.menu');
-    const propiedadButton = document.querySelector('.button__propiedad');
     
     if (currentUser) {
         // Usuario logueado
