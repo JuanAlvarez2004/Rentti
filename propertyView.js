@@ -86,6 +86,7 @@ function setupContactForm(property) {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (!currentUser || !currentUser.email) {
             alert('Debes iniciar sesión para enviar mensajes.');
+            window.location.href = 'login.html';
             return;
         }
 
@@ -132,6 +133,7 @@ function setupCalendar(property) {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (!currentUser || !currentUser.email) {
             alert('Debes iniciar sesión para agendar una cita.');
+            window.location.href = 'login.html';
             return;
         }
 
