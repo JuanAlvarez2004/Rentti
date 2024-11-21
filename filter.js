@@ -125,7 +125,7 @@ function filterLocation() {
             `;
         }
     } else {
-        console.log("Propiedades después del filtrado:", filteredProperties); // Debug
+        console.log("Propiedades después del filtrado:", filteredCity); // Debug
         displayProperties(filteredCity);
     }   
 }
