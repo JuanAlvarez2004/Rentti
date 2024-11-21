@@ -86,8 +86,21 @@ function applyFilters() {
         return matchesType && matchesPrice && matchesRooms && matchesBathrooms && matchesPets && matchesServices && matchesFurniture;
     });
 
-    console.log("Propiedades después del filtrado:", filteredProperties); // Debug
-    displayProperties(filteredProperties);
+    // Si no hay propiedades, mostrar mensaje de error
+    if (filteredProperties.length === 0) {
+        const grid = document.querySelector('.grid');
+        if (grid) {
+            grid.innerHTML = `
+                <div class="no-results">
+                    <p>No se han encontrado propiedades que coincidan con los filtros aplicados.</p>
+                    <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+                </div>
+            `;
+        }
+    } else {
+        console.log("Propiedades después del filtrado:", filteredProperties); // Debug
+        displayProperties(filteredProperties);
+    }
 
     // Cerrar el diálogo desmarcando el checkbox
     const filterCheckbox = document.getElementById('filter__modal');
